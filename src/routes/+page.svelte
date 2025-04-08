@@ -22,11 +22,17 @@
 
 <style>
   main {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
-    padding: 2rem;
-    max-width: 960px;
-    margin: 0 auto;
-    background-color: #f2f4f8;
+    main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding: 4rem;
+  font-family: "Meiryo UI", sans-serif;
+}
+
   }
 
   .header {

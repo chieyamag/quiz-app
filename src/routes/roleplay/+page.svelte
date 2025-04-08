@@ -1,14 +1,21 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+<<<<<<< HEAD
   import { scenarios } from '$lib/data/scenarios';
+=======
+  import { scenarios } from '$lib/data/scenarios'; // あなたが既に作っている想定
+>>>>>>> 1677898 (新しい教習所クイズに差し替え)
 
   let selectedId = '';
   $: selected = scenarios.find((s) => s.id === selectedId);
 
+<<<<<<< HEAD
   function scrollToTop() {
   goto('/');
 }
 
+=======
+>>>>>>> 1677898 (新しい教習所クイズに差し替え)
   function startScenario() {
     if (selectedId) {
       goto(`/roleplay/chat?char=${selectedId}`);
@@ -16,6 +23,7 @@
   }
 </script>
 
+<<<<<<< HEAD
 <div class="wrapper">
   <h1 class="title">AI会話トレーニング</h1>
   <p class="subtitle">シナリオを選んで開始してください</p>
@@ -71,11 +79,24 @@
   }
 
   .story-list {
+=======
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .scenarios {
+    margin-top: 1rem;
+>>>>>>> 1677898 (新しい教習所クイズに差し替え)
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
+<<<<<<< HEAD
   .story-box {
     background: #fff;
     border: 1px solid #ddd;
@@ -212,3 +233,42 @@
 }
 
 </style>
+=======
+  .radio-option {
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  button {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+</style>
+
+<div class="container">
+  <h1>AI会話トレーニング</h1>
+  <p>シナリオを選んで開始してください</p>
+
+  <div class="scenarios">
+    {#each scenarios as s}
+      <label class="radio-option">
+        <input type="radio" bind:group={selectedId} value={s.id} />
+        {s.title}
+      </label>
+    {/each}
+  </div>
+
+  <button on:click={startScenario} disabled={!selectedId}>会話スタート</button>
+</div>
+>>>>>>> 1677898 (新しい教習所クイズに差し替え)
